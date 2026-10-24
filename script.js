@@ -403,7 +403,7 @@ const CONTACT = {
       if (CONTACT.email) lines.push(`email     <a href="mailto:${esc(CONTACT.email)}">${esc(CONTACT.email)}</a>`);
       if (CONTACT.linkedin) lines.push(`linkedin  <a href="${esc(CONTACT.linkedin)}" target="_blank" rel="noopener">${esc(CONTACT.linkedin)}</a>`);
       if (CONTACT.github) lines.push(`github    <a href="${esc(CONTACT.github)}" target="_blank" rel="noopener">${esc(CONTACT.github)}</a>`);
-      return lines.join('\n') || 'type <b>help</b> to email me';
+      return lines.join('\n') || COMMANDS.help();
     },
     theme: () => `mode → ${toggleTheme() === 'light' ? 'PRINT' : 'CONSOLE'}`,
     date: () => new Date().toISOString(),
