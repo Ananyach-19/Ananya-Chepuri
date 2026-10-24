@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Ananya Chepuri — Data Scientist</title>
+  <meta name="description" content="Ananya Chepuri — Data Scientist. M.S. Data Science, Rutgers University. ETL pipelines, dashboards, computer vision and machine learning." />
+  <meta name="theme-color" content="#121214" />
+  <meta property="og:title" content="Ananya Chepuri — Data Scientist" />
+  <meta property="og:description" content="Instrument Console AC/DS-01. Pipelines, models and dashboards — from raw signal to operational decision." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Apply saved theme before paint to avoid a flash.
+    try { var t = localStorage.getItem('ac-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#works">Skip to index of works</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ═════════ STATUS BAR ═════════ -->
+  <header class="status" role="banner">
+    <div class="status__cell status__id"><span class="dot" aria-hidden="true"></span>AC/DS-01</div>
+    <div class="status__cell hide-sm">CONSOLE <span class="dim">v2026.10</span></div>
+    <div class="status__cell status__section hide-sm">SEC <span id="sec-readout">§00 / 06</span></div>
+    <div class="status__cell status__clock"><span class="dim">UTC</span> <time id="utc">--:--:--.-</time></div>
+    <div class="status__cell hide-md"><span class="dim">NJ</span> <span id="local">--:--</span></div>
+    <div class="status__cell hide-md"><span class="dim">XY</span> <span id="xy">0000·0000</span></div>
+    <button class="status__cell status__mode" id="mode" type="button" aria-label="Toggle print mode">
+      [ <span id="mode-label">CONSOLE</span> ]
+    </button>
+  </header>
+
+  <main class="frame">
+
+    <!-- Column ruler -->
+    <div class="ruler" aria-hidden="true">
+      <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span>
+      <span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span>
+    </div>
+
+    <!-- ═════════ §00 HERO ═════════ -->
+    <section class="hero" id="top" data-sec="00" aria-label="Introduction">
+      <div class="cell hero__name" data-coord="A1">
+        <p class="kicker">Data Scientist — Specimen No. 0001 / M.S. Rutgers ’26</p>
+        <h1 class="name">
+          <span class="name__line">Ananya</span>
+          <span class="name__line">Chepuri<i class="pt" aria-hidden="true"></i></span>
+        </h1>
+      </div>
+
+      <aside class="cell hero__spec" data-coord="I1" aria-label="Specification">
+        <p class="label">SPEC.SHEET</p>
+        <dl class="spec">
+          <div><dt>Discipline</dt><dd>Data Science / ML</dd></div>
+          <div><dt>Degree</dt><dd>M.S. Data Science, Rutgers</dd></div>
+          <div><dt>Conferral</dt><dd>May 2026</dd></div>
+          <div><dt>Prior</dt><dd>B.Tech ECE, GCET</dd></div>
+          <div><dt>Base</dt><dd>New Brunswick, NJ</dd></div>
+          <div><dt>Primary I/O</dt><dd>Python · SQL · ETL</dd></div>
+          <div><dt>Status</dt><dd><span class="live">●</span> Accepting signals</dd></div>
+        </dl>
+      </aside>
+
+      <div class="cell hero__abstract" data-coord="A2">
+        <p class="label">ABSTRACT</p>
+        <p class="abstract">
+          I build the machinery between raw data and real decisions:
+          <em>ETL pipelines</em> that hold up in production, <em>dashboards</em>
+          people actually open, and <em>models</em> that survive validation.
+          My work spans computer vision, workflow automation, API integration and
+          process improvement — documented well enough that the next person can keep it running.
+        </p>
+        <p class="abstract dim">
+          Keywords — supervised &amp; unsupervised learning; vision transformers;
+          Bayesian modeling; data warehousing; reporting automation.
+        </p>
+        <a class="cta" href="#works">→ Open index of works <span class="kbd">↵</span></a>
+      </div>
+
+      <figure class="cell hero__fig" data-coord="F2">
+        <figcaption class="fig__head">
+          <span class="label">FIG. 01</span>
+          <span>Convergence trace — hybrid ViT classifier vs. CNN baseline</span>
+          <span class="dim hide-sm">SCHEMATIC · endpoint as reported</span>
+        </figcaption>
+        <div class="chart" id="chart">
+          <svg viewBox="0 0 640 300" preserveAspectRatio="none" role="img"
+               aria-label="Schematic line chart: hybrid Vision Transformer accuracy rises over training epochs to a reported 92 percent, above a CNN baseline.">
+            <g class="chart__grid" id="chart-grid"></g>
+            <path class="chart__line chart__line--base" id="line-base" d="" />
+            <path class="chart__line chart__line--main" id="line-main" d="" />
+            <g id="chart-end"></g>
+            <line class="chart__cursor" id="chart-cursor" x1="0" x2="0" y1="20" y2="270" />
+            <circle class="chart__probe" id="chart-probe" r="4" cx="-10" cy="-10" />
+          </svg>
+          <div class="chart__readout" id="chart-readout">EP — · ACC —</div>
+        </div>
+        <div class="fig__legend">
+          <span><i class="sw sw--main"></i>HYBRID ViT + MOTOR FEATURES</span>
+          <span><i class="sw sw--base"></i>CNN BASELINE</span>
+        </div>
+      </figure>
+
+      <div class="metrics" role="list" aria-label="Key metrics">
+        <div class="cell metric" role="listitem" data-coord="A3">
+          <span class="label">CLASSIFIER ACC.</span>
+          <span class="metric__v"><b data-count="92" data-dec="1">0</b><small>%</small></span>
+          <span class="metric__src">P.01 · Parkinson’s ViT</span>
+        </div>
+        <div class="cell metric" role="listitem" data-coord="D3">
+          <span class="label">MANUAL TRACKING</span>
+          <span class="metric__v"><small>−</small><b data-count="60">0</b><small>%</small></span>
+          <span class="metric__src">Hinge Health · CV tooling</span>
+        </div>
+        <div class="cell metric" role="listitem" data-coord="G3">
+          <span class="label">MONITORING EFF.</span>
+          <span class="metric__v"><small>+</small><b data-count="50">0</b><small>%</small></span>
+          <span class="metric__src">Switcheko · Power BI</span>
+        </div>
+        <div class="cell metric" role="listitem" data-coord="J3">
+          <span class="label">STUDENTS ONBOARDED</span>
+          <span class="metric__v"><b data-count="3000" data-sep="1">0</b><small>+</small></span>
+          <span class="metric__src">Rutgers Orientation ’25</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ §01 WORKS ═════════ -->
+    <section class="section" id="works" data-sec="01" aria-labelledby="works-h">
+      <header class="sec-head">
+        <span class="sec-head__n">§01</span>
+        <h2 id="works-h" class="sec-head__t">Index of Works</h2>
+        <span class="sec-head__meta"><span id="works-count">04</span> ENTRIES · CLICK ROW TO EXPAND</span>
+      </header>
+
+      <div class="filters" role="toolbar" aria-label="Filter works">
+        <span class="label">FILTER/</span>
+        <button class="chip is-on" data-filter="all" type="button">ALL</button>
+        <button class="chip" data-filter="ml" type="button">MACHINE LEARNING</button>
+        <button class="chip" data-filter="cv" type="button">COMPUTER VISION</button>
+        <button class="chip" data-filter="de" type="button">DATA ENGINEERING</button>
+        <button class="chip" data-filter="iot" type="button">IOT / HARDWARE</button>
+      </div>
+
+      <div class="table" role="table" aria-label="Projects">
+        <div class="table__head" role="row">
+          <span role="columnheader">ID</span>
+          <span role="columnheader">TITLE</span>
+          <span role="columnheader" class="c-domain">DOMAIN</span>
+          <span role="columnheader" class="c-method">METHOD</span>
+          <button role="columnheader" class="sort" id="sort-year" type="button" aria-label="Sort by year">YEAR <span id="sort-dir">↓</span></button>
+          <span role="columnheader" class="c-signal">SIGNAL</span>
+          <span role="columnheader" aria-hidden="true"></span>
+        </div>
+
+        <ol class="works" id="works-list">
+          <!-- P.01 -->
+          <li class="work" data-tags="ml cv" data-year="2025" data-id="1">
+            <button class="work__row" type="button" aria-expanded="false" aria-controls="w1">
+              <span class="c-id">P.01</span>
+              <span class="c-title">Parkinson’s Pattern Profiling</span>
+              <span class="c-domain">Medical CV</span>
+              <span class="c-method">ViT · CycleGAN · Feature fusion</span>
+              <span class="c-year">2025</span>
+              <span class="c-signal"><b>92.0</b>% acc</span>
+              <span class="c-toggle" aria-hidden="true"></span>
+            </button>
+            <div class="work__body" id="w1" role="region" aria-label="Parkinson’s Pattern Profiling details">
+              <div class="work__inner">
+                <div class="work__col">
+                  <p class="label">ABSTRACT</p>
+                  <ul class="ticks">
+                    <li>Hybrid classification pipeline fusing handcrafted motor features with Vision Transformer embeddings for spiral &amp; meander handwriting analysis.</li>
+                    <li>CycleGAN for domain-specific data augmentation; transfer learning, positional encoding and multi-head attention with fine-tuned ViTs.</li>
+                    <li>Fused features fed into Logistic Regression, Decision Tree and KNN — <strong>92% accuracy</strong>, outperforming traditional CNNs.</li>
+                  </ul>
+                </div>
+                <div class="work__col">
+                  <p class="label">PIPELINE</p>
+                  <ol class="flow">
+                    <li>Spiral / meander scans</li>
+                    <li>CycleGAN augmentation</li>
+                    <li>ViT embeddings ⊕ motor features</li>
+                    <li>LR · DT · KNN</li>
+                    <li class="flow__out">92% accuracy &gt; CNN baseline</li>
+                  </ol>
+                </div>
+                <div class="work__col">
+                  <p class="label">SPEC</p>
+                  <dl class="kv">
+                    <div><dt>Type</dt><dd>Research</dd></div>
+                    <div><dt>Year</dt><dd>2025</dd></div>
+                    <div><dt>Stack</dt><dd>PyTorch, ViT, CycleGAN, scikit-learn</dd></div>
+                    <div><dt>Task</dt><dd>Binary diagnosis</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- P.02 -->
+          <li class="work" data-tags="de" data-year="2025" data-id="2">
+            <button class="work__row" type="button" aria-expanded="false" aria-controls="w2">
+              <span class="c-id">P.02</span>
+              <span class="c-title">Energy Data Pipeline &amp; Fleet Dashboard</span>
+              <span class="c-domain">Energy Ops</span>
+              <span class="c-method">Airflow · DQ checks · Tableau</span>
+              <span class="c-year">2025</span>
+              <span class="c-signal"><b>ETL</b> automated</span>
+              <span class="c-toggle" aria-hidden="true"></span>
+            </button>
+            <div class="work__body" id="w2" role="region" aria-label="Energy Data Pipeline details">
+              <div class="work__inner">
+                <div class="work__col">
+                  <p class="label">ABSTRACT</p>
+                  <ul class="ticks">
+                    <li>Automated ETL workflows orchestrated in Apache Airflow, with enforced data-quality checks at each stage.</li>
+                    <li>Tableau dashboards tracking operational performance and device output trends across the fleet.</li>
+                  </ul>
+                </div>
+                <div class="work__col">
+                  <p class="label">PIPELINE</p>
+                  <ol class="flow">
+                    <li>Device / fleet energy feeds</li>
+                    <li>Airflow DAG: extract → transform → load</li>
+                    <li>Data-quality gates</li>
+                    <li>Warehouse tables</li>
+                    <li class="flow__out">Tableau ops dashboards</li>
+                  </ol>
+                </div>
+                <div class="work__col">
+                  <p class="label">SPEC</p>
+                  <dl class="kv">
+                    <div><dt>Type</dt><dd>Data engineering</dd></div>
+                    <div><dt>Year</dt><dd>2025</dd></div>
+                    <div><dt>Stack</dt><dd>Python, SQL, Airflow, Tableau</dd></div>
+                    <div><dt>Output</dt><dd>Fleet performance reporting</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- P.03 -->
+          <li class="work" data-tags="ml cv" data-year="2024" data-id="3">
+            <button class="work__row" type="button" aria-expanded="false" aria-controls="w3">
+              <span class="c-id">P.03</span>
+              <span class="c-title">Green Coin — ML Waste Segregation</span>
+              <span class="c-domain">Sustainability</span>
+              <span class="c-method">CNN · Rewards system</span>
+              <span class="c-year">2024</span>
+              <span class="c-signal"><b>CNN</b> classifier</span>
+              <span class="c-toggle" aria-hidden="true"></span>
+            </button>
+            <div class="work__body" id="w3" role="region" aria-label="Green Coin details">
+              <div class="work__inner">
+                <div class="work__col">
+                  <p class="label">ABSTRACT</p>
+                  <ul class="ticks">
+                    <li>CNN-based image classifier for waste identification, enabling automated waste reporting.</li>
+                    <li>Deployed a Green Coin reward system that incentivises companies to improve waste quality.</li>
+                    <li>Building a marketplace integration for sustainable product exchange on top of the Green Coin ledger.</li>
+                  </ul>
+                </div>
+                <div class="work__col">
+                  <p class="label">PIPELINE</p>
+                  <ol class="flow">
+                    <li>Waste images</li>
+                    <li>CNN classifier</li>
+                    <li>Automated waste reports</li>
+                    <li>Green Coin rewards</li>
+                    <li class="flow__out">Marketplace (in development)</li>
+                  </ol>
+                </div>
+                <div class="work__col">
+                  <p class="label">SPEC</p>
+                  <dl class="kv">
+                    <div><dt>Type</dt><dd>Applied ML product</dd></div>
+                    <div><dt>Year</dt><dd>2024</dd></div>
+                    <div><dt>Stack</dt><dd>Python, CNN, TensorFlow</dd></div>
+                    <div><dt>Status</dt><dd>Marketplace in build</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- P.04 -->
+          <li class="work" data-tags="iot" data-year="2022" data-id="4">
+            <button class="work__row" type="button" aria-expanded="false" aria-controls="w4">
+              <span class="c-id">P.04</span>
+              <span class="c-title">Biometric Authentication for Secure Voting</span>
+              <span class="c-domain">Civic IoT</span>
+              <span class="c-method">Arduino · GPS · Aadhaar</span>
+              <span class="c-year">2022</span>
+              <span class="c-signal"><b>Patent</b> published</span>
+              <span class="c-toggle" aria-hidden="true"></span>
+            </button>
+            <div class="work__body" id="w4" role="region" aria-label="Biometric Voting details">
+              <div class="work__inner">
+                <div class="work__col">
+                  <p class="label">ABSTRACT</p>
+                  <ul class="ticks">
+                    <li>IoT biometric voting system on Arduino, integrating GPS modules and Aadhaar verification.</li>
+                    <li>Real-time voter authentication and fraud detection — authorities are alerted on verification failure.</li>
+                    <li>Indian Patent, Publication No. <strong>202241052177</strong> (23 Sep 2022). 3rd place, Region 9, JHUB Hackathon 2k22.</li>
+                  </ul>
+                </div>
+                <div class="work__col">
+                  <p class="label">PIPELINE</p>
+                  <ol class="flow">
+                    <li>Fingerprint + Aadhaar ID</li>
+                    <li>Arduino verification</li>
+                    <li>GPS geotag</li>
+                    <li>Match? → cast vote</li>
+                    <li class="flow__out">Fail → alert authorities</li>
+                  </ol>
+                </div>
+                <div class="work__col">
+                  <p class="label">SPEC</p>
+                  <dl class="kv">
+                    <div><dt>Type</dt><dd>Hardware + IoT</dd></div>
+                    <div><dt>Year</dt><dd>2022</dd></div>
+                    <div><dt>Stack</dt><dd>Arduino, GPS, biometrics</dd></div>
+                    <div><dt>IP</dt><dd>IN 202241052177</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═════════ §02 EXPERIENCE ═════════ -->
+    <section class="section" id="log" data-sec="02" aria-labelledby="log-h">
+      <header class="sec-head">
+        <span class="sec-head__n">§02</span>
+        <h2 id="log-h" class="sec-head__t">Field Log</h2>
+        <span class="sec-head__meta">PROFESSIONAL EXPERIENCE · 02 RECORDS</span>
+      </header>
+
+      <article class="log">
+        <div class="cell log__meta" data-coord="A">
+          <span class="log__ts">2024</span>
+          <span class="dim">BENGALURU, IN</span>
+          <span class="tag">ML TEAM</span>
+        </div>
+        <div class="cell log__main" data-coord="C">
+          <h3 class="log__org">Hinge Health</h3>
+          <p class="log__role">Software Engineering Intern — Machine Learning</p>
+          <ul class="ticks">
+            <li>Engineered and deployed a Streamlit internal tool for Computer Vision services on AWS + Docker, reducing manual tracking by 60%.</li>
+            <li>Refactored SQL-heavy services to cut latency and improve fault tolerance.</li>
+            <li>Built and automated CI/CD pipelines with AWS CloudFormation, streamlining deployment and operational workflows.</li>
+            <li>Integrated the Sapling SDK into the mobile ecosystem for grammar and spell-check.</li>
+          </ul>
+        </div>
+        <div class="cell log__stat" data-coord="J">
+          <span class="label">Δ MANUAL TRACKING</span>
+          <span class="log__big">−60<small>%</small></span>
+          <span class="dim">Streamlit · AWS · Docker · CloudFormation</span>
+        </div>
+      </article>
+
+      <article class="log">
+        <div class="cell log__meta" data-coord="A">
+          <span class="log__ts">2023</span>
+          <span class="dim">HYDERABAD, IN</span>
+          <span class="tag">ANALYTICS</span>
+        </div>
+        <div class="cell log__main" data-coord="C">
+          <h3 class="log__org">Switcheko Pvt Ltd</h3>
+          <p class="log__role">Web Developer Intern</p>
+          <ul class="ticks">
+            <li>Designed and maintained Power BI dashboards that improved program-monitoring efficiency by 50%.</li>
+            <li>Ran EDA on sustainable-material markets (bamboo, hemp) to support pricing strategy.</li>
+            <li>Implemented performance metrics on business KPIs to drive data-driven stakeholder reporting.</li>
+          </ul>
+        </div>
+        <div class="cell log__stat" data-coord="J">
+          <span class="label">Δ MONITORING EFF.</span>
+          <span class="log__big">+50<small>%</small></span>
+          <span class="dim">Power BI · EDA · KPI design</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- ═════════ §03 INSTRUMENTATION ═════════ -->
+    <section class="section" id="matrix" data-sec="03" aria-labelledby="matrix-h">
+      <header class="sec-head">
+        <span class="sec-head__n">§03</span>
+        <h2 id="matrix-h" class="sec-head__t">Instrumentation Matrix</h2>
+        <span class="sec-head__meta">SKILL × DEPLOYMENT · HOVER TO TRACE</span>
+      </header>
+
+      <div class="matrix-wrap">
+        <p class="matrix-note">
+          No self-rated progress bars. Each mark below is a place the tool was actually used —
+          read across for breadth, down for the stack behind each piece of work.
+        </p>
+        <div class="matrix-scroll">
+          <table class="matrix" id="matrix-table">
+            <thead>
+              <tr>
+                <th scope="col" class="m-skill">INSTRUMENT</th>
+                <th scope="col" title="Parkinson’s Pattern Profiling">P.01</th>
+                <th scope="col" title="Energy Data Pipeline">P.02</th>
+                <th scope="col" title="Green Coin">P.03</th>
+                <th scope="col" title="Biometric Voting">P.04</th>
+                <th scope="col" title="Hinge Health">E.HH</th>
+                <th scope="col" title="Switcheko">E.SW</th>
+                <th scope="col" class="m-sum">Σ</th>
+              </tr>
+            </thead>
+            <tbody id="matrix-body"><!-- rendered by script.js --></tbody>
+            <tfoot>
+              <tr id="matrix-foot"><th scope="row" class="m-skill">Σ PER WORK</th></tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="also">
+          <span class="label">ALSO CALIBRATED/</span>
+          <span>Bayesian Modeling</span><span>Model Validation</span><span>SVM</span><span>Random Forest</span>
+          <span>Regression &amp; Time Series</span><span>Data Warehousing</span><span>Data Normalization</span>
+          <span>Seaborn</span><span>Plotly</span><span>Git</span><span>Excel</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ §04 EDUCATION ═════════ -->
+    <section class="section" id="edu" data-sec="04" aria-labelledby="edu-h">
+      <header class="sec-head">
+        <span class="sec-head__n">§04</span>
+        <h2 id="edu-h" class="sec-head__t">Training Record</h2>
+        <span class="sec-head__meta">EDUCATION · 02 INSTITUTIONS</span>
+      </header>
+
+      <div class="edu">
+        <div class="cell edu__item" data-coord="A">
+          <p class="label">2024 — 2026 / NEW BRUNSWICK, NJ</p>
+          <h3 class="edu__school">Rutgers University</h3>
+          <p class="edu__deg">Master of Science, Data Science</p>
+          <p class="edu__gpa"><span class="dim">CGPA</span> <b>3.5</b><span class="dim"> / 4.0</span> · <span class="dim">May 2026</span></p>
+          <ol class="course">
+            <li><span>CS.01</span>Machine Learning &amp; Generative AI</li>
+            <li><span>CS.02</span>Regression &amp; Time Series Analysis</li>
+            <li><span>CS.03</span>Probability &amp; Statistical Inference</li>
+            <li><span>CS.04</span>Data Structures &amp; Algorithms</li>
+            <li><span>CS.05</span>Statistical Modeling &amp; Computing</li>
+            <li><span>CS.06</span>Data Wrangling &amp; Mining</li>
+          </ol>
+        </div>
+        <div class="cell edu__item" data-coord="G">
+          <p class="label">2020 — 2024 / HYDERABAD, IN</p>
+          <h3 class="edu__school">Geethanjali College of Engineering &amp; Technology</h3>
+          <p class="edu__deg">Bachelor of Technology, Electronics &amp; Communication Engineering</p>
+          <p class="edu__gpa"><span class="dim">CGPA</span> <b>8.69</b><span class="dim"> / 10</span> · <span class="dim">June 2024</span></p>
+          <p class="edu__note">
+            Signal processing roots: the ECE background is why I think about data as
+            signal first — sampling, noise, and what survives the channel.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ §05 PUBLICATIONS ═════════ -->
+    <section class="section" id="refs" data-sec="05" aria-labelledby="refs-h">
+      <header class="sec-head">
+        <span class="sec-head__n">§05</span>
+        <h2 id="refs-h" class="sec-head__t">References &amp; Record</h2>
+        <span class="sec-head__meta">PUBLICATIONS · PATENT · CERTIFICATION · LEADERSHIP</span>
+      </header>
+
+      <div class="refs">
+        <ol class="cell biblio" data-coord="A">
+          <li>
+            <span class="biblio__n">[1]</span>
+            <p>“Role of Learning Management Systems in Online Learning.” Chapter 11 in
+              <em>Engineering Pedagogy Towards Outcome-Based Education.</em> CRC Press.
+              ISBN 978-0-367-53743-2 (hbk).
+              <a href="https://doi.org/10.1201/9781003083160" target="_blank" rel="noopener">doi:10.1201/9781003083160</a></p>
+          </li>
+          <li>
+            <span class="biblio__n">[2]</span>
+            <p>“COVID Catch — Mobility Rate.” <em>UGC CARE Group 1 Journal.</em> ISSN 2278-6864.</p>
+          </li>
+          <li>
+            <span class="biblio__n">[3]</span>
+            <p>“Advanced Biometric Authentication for Secured Voting.” Indian Patent,
+              Publication No. 202241052177, 23 September 2022.</p>
+          </li>
+          <li>
+            <span class="biblio__n">[4]</span>
+            <p>Machine Learning Specialization. DeepLearning.AI &amp; Stanford University, Coursera. Certificate.</p>
+          </li>
+        </ol>
+
+        <div class="cell lead" data-coord="H">
+          <p class="label">LEADERSHIP.TBL</p>
+          <table class="lead__t">
+            <tbody>
+              <tr><th scope="row">Student Orientation Leader</th><td>Rutgers</td><td>’25–26</td><td class="sig">3000+ students</td></tr>
+              <tr><th scope="row">Chair, Women in Engineering</th><td>IEEE GCET</td><td>’21–23</td><td class="sig">+150% members</td></tr>
+              <tr><th scope="row">Peer mentor</th><td>IEEE WIE</td><td>’21–23</td><td class="sig">40+ mentored</td></tr>
+              <tr><th scope="row">Host / Volunteer</th><td>IEEE GRSS Summer School</td><td>—</td><td>Logistics</td></tr>
+              <tr><th scope="row">Newsletter Editor</th><td>GCET</td><td>’22</td><td>Publication</td></tr>
+              <tr><th scope="row">Student Member</th><td>Nat’l Entrepreneurship Network</td><td>’22–23</td><td>E-Week</td></tr>
+            </tbody>
+          </table>
+          <p class="lead__awards">
+            <span class="label">AWARDS/</span>
+            Best Student Volunteer, IEEE GCET · 3rd Place, Region 9, JHUB Hackathon 2k22
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ §06 CONTACT / TERMINAL ═════════ -->
+    <section class="section" id="contact" data-sec="06" aria-labelledby="contact-h">
+      <header class="sec-head">
+        <span class="sec-head__n">§06</span>
+        <h2 id="contact-h" class="sec-head__t">Open a Channel</h2>
+        <span class="sec-head__meta">PRESS <span class="kbd">/</span> TO FOCUS TERMINAL</span>
+      </header>
+
+      <div class="contact">
+        <div class="cell contact__big" data-coord="A">
+          <p class="contact__lede">Hiring for data science, analytics or ML engineering roles?</p>
+          <ul class="links" id="links"><!-- rendered from CONTACT in script.js --></ul>
+        </div>
+
+        <div class="cell term" data-coord="F">
+          <div class="term__bar">
+            <span>ac@ds-01: ~</span><span class="dim">tty/0 · type <b>help</b></span>
+          </div>
+          <div class="term__out" id="term-out" aria-live="polite"></div>
+          <form class="term__in" id="term-form" autocomplete="off">
+            <label for="term-input" class="term__ps">ac@ds-01 ~ %</label>
+            <input id="term-input" type="text" spellcheck="false" autocapitalize="off" aria-label="Terminal command" />
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <span>© <span id="year">2026</span> Ananya Chepuri</span>
+      <span class="hide-sm">Set in Inter Tight &amp; JetBrains Mono · hand-built, zero frameworks</span>
+      <span><a href="#top">↑ Return to origin [0,0]</a></span>
+    </footer>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
