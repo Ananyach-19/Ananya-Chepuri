@@ -356,9 +356,16 @@ const CONTACT = {
   };
   const jump = (sel) => $(sel).scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
 
+  const EMAIL = 'ananya.chepuri@dca.nj.gov';
   const COMMANDS = {
-    help: () => [
+    help: () => {
+      location.href = `mailto:${EMAIL}?subject=${encodeURIComponent('Hello from your portfolio')}`;
+      return `opening your email app… write to <a href="mailto:${EMAIL}">${EMAIL}</a>\n` +
+        '<span class="dim">nothing opened? copy the address above. type <b>commands</b> for everything else.</span>';
+    },
+    commands: () => [
       '<span class="hl">available commands</span>',
+      '  help            email Ananya',
       '  whoami          identity record',
       '  ls              list works',
       '  open &lt;1-4&gt;      expand a work in §01',
@@ -396,7 +403,7 @@ const CONTACT = {
       if (CONTACT.email) lines.push(`email     <a href="mailto:${esc(CONTACT.email)}">${esc(CONTACT.email)}</a>`);
       if (CONTACT.linkedin) lines.push(`linkedin  <a href="${esc(CONTACT.linkedin)}" target="_blank" rel="noopener">${esc(CONTACT.linkedin)}</a>`);
       if (CONTACT.github) lines.push(`github    <a href="${esc(CONTACT.github)}" target="_blank" rel="noopener">${esc(CONTACT.github)}</a>`);
-      return lines.join('\n') || 'no channels configured';
+      return lines.join('\n') || 'type <b>help</b> to email me';
     },
     theme: () => `mode → ${toggleTheme() === 'light' ? 'PRINT' : 'CONSOLE'}`,
     date: () => new Date().toISOString(),
@@ -406,7 +413,7 @@ const CONTACT = {
       : '<span class="err">sudo: nice try.</span>',
   };
   COMMANDS.projects = COMMANDS.ls;
-  COMMANDS['?'] = COMMANDS.help;
+  COMMANDS['?'] = COMMANDS.commands;
 
   const history = []; let hi = 0;
   const run = (raw) => {
@@ -416,7 +423,7 @@ const CONTACT = {
     print(esc(line), 'cmd');
     const [cmd, ...rest] = line.split(/\s+/);
     const fn = COMMANDS[cmd.toLowerCase()];
-    if (!fn) { print(`<span class="err">command not found: ${esc(cmd)}</span> — try <b>help</b>`); return; }
+    if (!fn) { print(`<span class="err">command not found: ${esc(cmd)}</span> — try <b>commands</b>`); return; }
     const res = fn(rest.join(' '));
     if (res !== null && res !== undefined) print(res);
   };
@@ -437,10 +444,10 @@ const CONTACT = {
   const boot = [
     'AC/DS-01 instrument console — boot',
     `[ ok ] clock synced · ${new Date().toISOString().slice(0, 19)}Z`,
-    '[ ok ] 4 works indexed · 2 field records · 18 instruments',
+    '[ ok ] 4 works indexed · 3 field records · 18 instruments',
     '[ ok ] channel open',
     '',
-    'type <b>help</b> to list commands.',
+    'type <b>help</b> to email me · <b>commands</b> to list everything else.',
   ];
   print(boot.join('\n'));
 
