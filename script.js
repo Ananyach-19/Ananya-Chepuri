@@ -6,9 +6,9 @@
 /* ───────────── EDIT ME: contact channels ─────────────
    Replace the placeholder values below. Leave a value as "" to hide that row. */
 const CONTACT = {
-  email:    'your.email@example.com',
-  linkedin: 'https://www.linkedin.com/in/your-handle',
-  github:   'https://github.com/your-handle',
+  email:    '',
+  linkedin: '',
+  github:   '',
   resume:   '',  // e.g. 'assets/Ananya_Chepuri_Resume.pdf' once the PDF is committed
 };
 
@@ -370,7 +370,7 @@ const CONTACT = {
       '  clear           clear the buffer',
     ].join('\n'),
     whoami: () =>
-      'Ananya Chepuri — Data Scientist\nM.S. Data Science, Rutgers University (May 2026)\n' +
+      'Ananya Chepuri — Data Scientist, NJ Department of Community Affairs (2026–)\nM.S. Data Science, Rutgers University (May 2026)\n' +
       'B.Tech ECE, Geethanjali College of Engineering & Technology (2024)\n' +
       'focus: ETL pipelines · dashboards · computer vision · workflow automation',
     ls: () => works.map((w) =>
